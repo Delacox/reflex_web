@@ -3,3 +3,4 @@
 assets/external/
 *.py[cod]
 __pycache__/
+.env
