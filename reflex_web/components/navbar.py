@@ -3,7 +3,7 @@ from reflex_web.components.logo import logo
 
 def navbar_link(text: str, url: str) -> rx.Component:
     return rx.link(
-        rx.text(text, size="4", weight="medium", color="#333"), href=url
+        rx.text(text, size="4", weight="medium", color=rx.color("slate", 12),), href=url
     )
 
 def navbar_buttons() -> rx.Component:
@@ -62,13 +62,13 @@ def navbar_buttons() -> rx.Component:
                         side="left"
                         
                     ),
-                    modal=True,
+                    modal=False, # Hace que no bloque la pagina ni desaparezca el scroll
                     justify="end",
                 ),
                 justify="between",
                 align_items="center",
-                padding="0.2em",
-                padding_x="2em",
+                margin="0.2em",
+                margin_x="2em",
                 
             ),
             width="100%"

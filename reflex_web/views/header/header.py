@@ -16,6 +16,7 @@ def header() -> rx.Component:
                         border_radius="5%",
                         border="2px solid",
                         border_color=rx.color("green", 11),
+                        box_shadow="0px 2px 5px rgba(61, 214, 140, 0.3)",
                         
                     ),
                     width="100%",
@@ -33,8 +34,8 @@ def header() -> rx.Component:
                     max_width="800px",
                     height="auto",
                     border_radius="5%",
-                    border="2px solid",
-                    border_color=rx.color("green", 11),
+                    
+                    box_shadow="4px 6px 3px rgba(61, 214, 140, 0.3)",
                 ),
                 width="100%",
             ),
