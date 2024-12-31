@@ -80,9 +80,7 @@ def index() -> rx.Component:
         ),
     )
     
-    
-                
-        
+  
 
 # Configura la aplicación.
  
@@ -104,4 +102,13 @@ app = rx.App(
         
 )
 
-app.add_page(index)
+app.add_page(
+    index,
+    title="Inicio | Tu Informático Online",
+    description="Servicios profesionales de informática y tecnología", 
+    meta=[
+        {"name": "keywords", "content": "informático,servicios,tecnología"},
+        {"name": "robots", "content": "index, follow"},
+        {"name": "viewport", "content": "width=device-width, initial-scale=1"}
+    ]
+)

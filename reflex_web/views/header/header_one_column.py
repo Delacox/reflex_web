@@ -64,12 +64,17 @@ def header_one_column() -> rx.Component:
                         ),
                         rx.box(
                             rx.center(
-                                rx.button("Llámanos",
+                                rx.button(
+                                  rx.hstack(
+                                      rx.icon("phone"),
+                                      rx.text("Llámanos"),
+                                      align="center"
+                                  ),  
                                   size="4",
                                   variant="soft",
                                   margin_top="1em",                                  
                                   color_scheme="green",
-                                  padding_x="4em",
+                                  padding_x="2em",
                                   ),
                                 
                                 )
@@ -137,13 +142,17 @@ def header_one_column() -> rx.Component:
                         ),
                         rx.box(
                             rx.center(
-                                rx.button("Llámanos",
+                                rx.button(
+                                  rx.hstack(
+                                      rx.icon("phone"),
+                                      rx.text("Llámanos"),
+                                      align="center"
+                                  ),  
                                   size="4",
                                   variant="soft",
                                   margin_top="1em",                                  
                                   color_scheme="green",
-                                  padding_x="4em",
-                                  margin_x="auto",
+                                  padding_x="2em",
                                   ),
                                 
                                 ),
