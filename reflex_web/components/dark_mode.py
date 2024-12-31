@@ -20,5 +20,6 @@ def dark_mode_toggle() -> rx.Component:
         variant="classic",
         radius="large",
         value=color_mode,
-        z_index="1"
+        z_index="1",
+        size="1",
     )

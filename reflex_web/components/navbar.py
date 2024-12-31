@@ -59,7 +59,11 @@ def navbar_buttons() -> rx.Component:
                         rx.menu.separator(),
                         rx.menu.item("Registro"),
                         rx.menu.item("Sign up"),
-                        side="left"
+                        side="left",
+                        background_color=rx.color_mode_cond(
+                                light="rgba(250, 255, 245, 0.95)",  # fondo semi-transparente
+                                dark="rgba(31, 31, 35, 0.95)"
+                            ),
                         
                     ),
                     modal=False, # Hace que no bloque la pagina ni desaparezca el scroll
@@ -82,8 +86,8 @@ def navbar_buttons() -> rx.Component:
         transform="translate(-50%, 0)",  # centra la caja usando transform
         backdrop_filter="blur(8px)",  # efecto de vidrio esmerilado opcional
         background_color=rx.color_mode_cond(
-            light="rgba(250, 255, 245, 0.9)",  # fondo semi-transparente
-            dark="rgba(31, 31, 35, 0.9)"
+            light="rgba(250, 255, 245, 0.6)",  # fondo semi-transparente
+            dark="rgba(31, 31, 35, 0.6)"
         ),
         box_shadow="0px 2px 5px rgba(61, 214, 140, 0.3)",
         z_index="999"

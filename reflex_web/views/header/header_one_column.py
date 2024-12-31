@@ -9,18 +9,39 @@ def header_one_column() -> rx.Component:
                 rx.center(
                     rx.flex(
                         # Heading
+                        rx.badge(
+                            rx.flex(
+                                rx.icon("laptop"),
+                                rx.text("Soporte técnico remoto",
+                                    size="3",
+                                    #color=rx.color("gray", 12),
+                                    ),
+                                width="100%",
+                                spacing="4",
+                                align="center",
+                                padding_x="5px",
+                                ),
+                            variant="soft",
+                            margin_x="auto",
+                            radius="large"
+                            ),
+                        
                         rx.heading(
                             "Siempre tranquilo y actualizado con ",
                             rx.text.span(
                                 "Tu ",
                                 color=rx.color("green", 11),
+                                align="center"
                             ),
                             "informático Online",
-                            size="9",
+                            font_size="3.2rem",
                             as_="h1",
                             text_align="center",
-                            width="100%",
+                            width="95%",
                             margin_bottom="10px",
+                            z_index="4",
+                            line_height="1.1",
+                            margin_x="auto"
                         ),
                         # Video with enhanced background effect
                         rx.box(
@@ -29,20 +50,34 @@ def header_one_column() -> rx.Component:
                                 width="600px",
                                 height="auto",
                                 border_radius="10px",
+                                light=False, #Poner true para ver imagen destacada
+                                
                             ),
                             class_name="video-container",  # Aplica la clase CSS
                             position="relative",
                             z_index="1",
                             border_radius="10px",
                             overflow="hidden",
-                            box_shadow="0px 8px 35px rgba(61, 214, 140, 0.6)",
+                            box_shadow="0px 12px 50px rgba(61, 214, 140, 0.7), 0px 0px 100px rgba(61, 214, 140, 0.4)",
                             margin="0 auto",
-                            animation="pulse 6s ease-in-out infinite",  # Ajusta velocidad y fluidez
+                            animation="pulse-smooth 6s ease-in-out infinite",  # Animación más fluida
                         ),
+                        rx.box(
+                            rx.center(
+                                rx.button("Llámanos",
+                                  size="4",
+                                  variant="soft",
+                                  margin_top="1em",                                  
+                                  color_scheme="green",
+                                  padding_x="4em",
+                                  ),
+                                
+                                )
+                            ),
                         width="100%",
                         justify="center",
                         flex_direction="column",
-                        spacing="1",
+                        spacing="6",
                     ),
                 ),
             ),
@@ -53,6 +88,22 @@ def header_one_column() -> rx.Component:
                 rx.center(
                     rx.vstack(
                         # Heading
+                        rx.badge(
+                            rx.flex(
+                                rx.icon("laptop"),
+                                rx.text("Soporte técnico remoto",
+                                    size="3",
+                                    variant="surface",
+                                    ),
+                                width="100%",
+                                spacing="4",
+                                align="center",
+                                padding_x="5px"
+                                ),
+                            
+                            margin_x="auto",
+                            radius="large"
+                            ),
                         rx.heading(
                             "Siempre tranquilo y actualizado con ",
                             rx.text.span(
@@ -60,27 +111,46 @@ def header_one_column() -> rx.Component:
                                 color=rx.color("green", 11),
                             ),
                             "informático Online",
-                            size="7",
+                            size="8",
                             as_="h1",
                             text_align="center",
                             width="100%",
                             margin_bottom="10px",
+                            z_index="4"
                         ),
                         # Video with simpler effect for mobile
                         rx.box(
                             rx.video(
                                 url="https://tuinformatico.online/wp-content/uploads/2024/11/03_Bienvenida.mp4",
-                                width="100%",
-                                max_width="400px",
+                                width="auto",
                                 height="auto",
                                 border_radius="10px",
                             ),
-                            box_shadow="0px 6px 30px rgba(61, 214, 140, 0.5)",
+                            class_name="video-container",  # Aplica la clase CSS
+                            position="relative",
+                            z_index="1",
+                            border_radius="10px",
+                            overflow="hidden",
+                            box_shadow="0px 12px 50px rgba(61, 214, 140, 0.7), 0px 0px 100px rgba(61, 214, 140, 0.4)",
                             margin="0 auto",
-                            animation="pulse 6s ease-in-out infinite",  # Ajusta velocidad y fluidez
+                            animation="pulse-smooth 6s ease-in-out infinite",  # Animación más fluida
                         ),
+                        rx.box(
+                            rx.center(
+                                rx.button("Llámanos",
+                                  size="4",
+                                  variant="soft",
+                                  margin_top="1em",                                  
+                                  color_scheme="green",
+                                  padding_x="4em",
+                                  margin_x="auto",
+                                  ),
+                                
+                                ),
+                            width="100%"                            
+                            ),
                         width="100%",
-                        spacing="1",
+                        spacing="7",
                     ),
                 ),
             ),
