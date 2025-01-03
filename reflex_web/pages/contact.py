@@ -49,12 +49,18 @@ def contact() -> rx.Component:
                 ),
                 rx.container(
                     rx.center(
+                        rx.heading(
+                            "Dejo dos formularios para ver el comportamiento responsive",
+                            padding="1em",
+                            text_align="center",                            
+                        ),
                         rx.flex(
                             contact_form(),contact_form(),
                             flex_direction=["column", "column", "row"],
                             spacing="5", 
                         ),
                     size="4",
+                    direction="column",
                     ) 
                     
                     

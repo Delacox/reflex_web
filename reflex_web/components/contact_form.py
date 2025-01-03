@@ -1,5 +1,9 @@
 import reflex as rx
 
+class CheckboxState(rx.State):
+    checked: bool = False
+
+
 def form_field(
     label: str, placeholder: str, type: str, name: str
 ) -> rx.Component:
@@ -20,13 +24,15 @@ def form_field(
     )
 
 
+
+
 def contact_form() -> rx.Component:
     return rx.card(
         rx.flex(
             rx.hstack(
                 rx.badge(
                     rx.icon(tag="mail-plus", size=32),
-                    color_scheme="blue",
+                    color_scheme="green",
                     radius="full",
                     padding="0.65rem",
                 ),
@@ -100,6 +106,11 @@ def contact_form() -> rx.Component:
                             placeholder="Mensaje",
                             name="mensaje",
                             resize="vertical",
+                        ),
+                        rx.checkbox(
+                            "Acepto la política de privacidad",
+                            name="politica",
+                            on_change=CheckboxState.set_checked,
                         ),
                         direction="column",
                         spacing="1",
