@@ -53,7 +53,7 @@ def header_one_column() -> rx.Component:
                             ),
                             class_name="video-container",  # Aplica la clase CSS
                             position="relative",
-                            z_index="1",
+                            z_index="0",
                             border_radius="10px",
                             overflow="hidden",
                             box_shadow="0px 12px 50px rgba(61, 214, 140, 0.7), 0px 0px 100px rgba(61, 214, 140, 0.4)",
@@ -70,7 +70,7 @@ def header_one_column() -> rx.Component:
                                   ),  
                                   size="4",
                                   variant="soft",
-                                  margin_top="1em",                                  
+                                  margin_top="1.5em",                                  
                                   color_scheme="green",
                                   padding_x="2em",
                                   ),
@@ -164,3 +164,5 @@ def header_one_column() -> rx.Component:
         ),
         width="100%",
     )
+
+

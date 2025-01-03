@@ -11,8 +11,12 @@ def navbar_buttons() -> rx.Component:
         rx.desktop_only(
             rx.hstack(
                 rx.hstack(
-                    logo(font_size="16px"),
-                    spacing="0"
+                    rx.link(
+                        logo(font_size="16px"),
+                        href="/",
+                        spacing="0",
+                        text_decoration="none",
+                    )
                 ),
                 rx.spacer(),
                 rx.hstack(
