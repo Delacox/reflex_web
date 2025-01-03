@@ -16,10 +16,10 @@ def navbar_buttons() -> rx.Component:
                 ),
                 rx.spacer(),
                 rx.hstack(
-                    navbar_link("Inicio", "/#"),
+                    navbar_link("Inicio", "/"),
                     navbar_link("Nosotros", "/#"),
                     navbar_link("Precios", "/#"),
-                    navbar_link("Contacto", "/#"),
+                    navbar_link("Contacto", "/contacto"),
                     spacing="5",
                 ),
                 rx.spacer(),
@@ -52,10 +52,10 @@ def navbar_buttons() -> rx.Component:
                         rx.icon("menu", size=30)
                     ),
                     rx.menu.content(
-                        rx.menu.item("Inicio"),
+                        rx.menu.item("Inicio", href="/"),
                         rx.menu.item("Nosotros"),
                         rx.menu.item("Precios"),
-                        rx.menu.item("Contacto"),
+                        rx.menu.item("Contacto", href="/contacto"),
                         rx.menu.separator(),
                         rx.menu.item("Registro"),
                         rx.menu.item("Sign up"),

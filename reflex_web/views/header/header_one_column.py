@@ -46,11 +46,9 @@ def header_one_column() -> rx.Component:
                         # Video with enhanced background effect
                         rx.box(
                             rx.video(
-                                url="https://tuinformatico.online/wp-content/uploads/2024/11/03_Bienvenida.mp4",
-                                width="600px",
-                                height="auto",
+                                url="https://youtu.be/OEHzxw4O-U4",
                                 border_radius="10px",
-                                light=False, #Poner true para ver imagen destacada
+                                light=True, #Poner true para ver imagen destacada
                                 
                             ),
                             class_name="video-container",  # Aplica la clase CSS
