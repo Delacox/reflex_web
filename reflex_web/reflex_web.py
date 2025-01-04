@@ -2,7 +2,10 @@ import reflex as rx
 import reflex_web.styles.styles as styles
 from reflex_web.pages.index import index
 from reflex_web.pages.contact import contact
-
+from reflex_web.pages.about_us import about_us
+from reflex_web.pages.prices import prices
+from reflex_web.pages.signup import signup
+from reflex_web.pages.login import login
 
 # Configura la aplicación.
  

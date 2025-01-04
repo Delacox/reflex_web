@@ -2,21 +2,22 @@ import reflex as rx
 import reflex_web.utils as utils
 from reflex_web.components.navbar import navbar_buttons
 from reflex_web.routers import Route
-from reflex_web.components.contact_form import contact_form
+from reflex_web.components.login_form import login_form
 from reflex_web.views.footer.footer import footer
+
 
 
 
 # Definimos la interfaz.
 # Lo que creemos con el decorador rx.page sera una pagina 
 @rx.page(
-    route = Route.CONTACT.value,
-    title=utils.contact_title,
-    description=utils.contact_description,
+    route = Route.LOGIN.value,
+    title=utils.login_title,
+    description=utils.login_description,
     image=utils.preview,
-    meta=utils.contact_meta,
+    meta=utils.login_meta,
 )
-def contact() -> rx.Component:
+def login() -> rx.Component:
     return rx.box(
         utils.lang(),
         # Contenedor principal con fondo y color base
@@ -46,23 +47,8 @@ def contact() -> rx.Component:
                     padding_top="9em"
                 ),
                 rx.container(
-                    rx.center(
-                        rx.heading(
-                            "Dejo dos formularios para ver el comportamiento responsive",
-                            padding="1em",
-                            text_align="center",                            
-                        ),
-                        rx.flex(
-                            contact_form(),contact_form(),
-                            flex_direction=["column", "column", "row"],
-                            spacing="5", 
-                        ),
-
-                    size="4",
-                    direction="column",
-                    ) 
-                    
-                    
+                    # codigo para la pagina
+                    login_form()
                 ),
                 position="relative",
                 z_index="1",
@@ -78,8 +64,6 @@ def contact() -> rx.Component:
             min_height="100vh",
             overflow="hidden",
         ),
-
-
         rx.container(
             footer(),
             size="4"
