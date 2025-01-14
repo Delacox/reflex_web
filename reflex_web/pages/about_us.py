@@ -63,9 +63,9 @@ def about_us() -> rx.Component:
             overflow="hidden",
         ),
 
-        rx.container(
+        rx.box(
             footer(),
-            size="4"
+            
         ),
         width="100%",
         min_height="100vh",

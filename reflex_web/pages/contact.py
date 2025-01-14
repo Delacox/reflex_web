@@ -80,9 +80,9 @@ def contact() -> rx.Component:
         ),
 
 
-        rx.container(
+        rx.box(
             footer(),
-            size="4"
+            
         ),
         width="100%",
         min_height="100vh",

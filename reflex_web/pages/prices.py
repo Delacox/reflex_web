@@ -3,6 +3,7 @@ import reflex_web.utils as utils
 from reflex_web.components.navbar import navbar_buttons
 from reflex_web.routers import Route
 from reflex_web.views.footer.footer import footer
+from reflex_web.views.pricing_cards_table.pricing_cards_table import pricing_cards_table
 
 
 
@@ -45,9 +46,10 @@ def prices() -> rx.Component:
                 rx.box(
                     padding_top="9em"
                 ),
-                rx.container(
+                rx.box(
                     # codigo para la pagina
-                    
+                    pricing_cards_table(),
+                    width="100%",                    
                 ),
                 position="relative",
                 z_index="1",
@@ -57,6 +59,7 @@ def prices() -> rx.Component:
                     light="rgba(225, 230, 222, 0.7)",
                     dark="rgba(0, 0, 0, 0.4)"
                 ),
+                
             ),
             position="relative",
             width="100%",
@@ -65,9 +68,9 @@ def prices() -> rx.Component:
         ),
 
 
-        rx.container(
+        rx.box(
             footer(),
-            size="4"
+            
         ),
         width="100%",
         min_height="100vh",

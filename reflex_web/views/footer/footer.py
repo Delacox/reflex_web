@@ -57,6 +57,12 @@ def socials() -> rx.Component:
 
 def footer() -> rx.Component:
     return rx.el.footer(
+        rx.divider(
+            width="80%",
+            align="center",
+            margin_x="auto",
+            margin_y="2em",
+            ),
         rx.container(
             rx.vstack(
                 rx.flex(
@@ -107,10 +113,10 @@ def footer() -> rx.Component:
             margin_x="auto",
         ),
         width="100%",
+        padding_y="1em",
         margin_x="auto",
-        background_color=rx.color_mode_cond(
-            light="rgba(225, 230, 222, 1)",
-            dark="rgba(0, 0, 0, 1)",
+        background=rx.color_mode_cond(
+            light="#E0E4DB",
+            dark="linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(37,36,36,1) 61%, rgba(36,36,36,1) 64%, rgba(38,38,38,1) 81%, rgba(17,17,17,1) 100%, rgba(214,241,227,1) 100%);"
         ),
-
     )
