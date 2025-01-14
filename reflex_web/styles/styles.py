@@ -1,6 +1,4 @@
+
 BASE_STYLE = {
-    # EJEMPLO
-    # rx.Button: {
-        #"width": "100%"
-    #}
+    "font_family": "Poppins",
 }

@@ -1,8 +1,13 @@
 import reflex as rx
 
-class CheckboxState(rx.State):
-    checked: bool = False
+class ContactFormState(rx.State):
+    form_data: dict = {}
 
+    @rx.event
+    def handle_submit(self, form_data: dict):
+        """Handle the form submit."""
+        self.form_data = form_data
+        return rx.window_alert(str(form_data))
 
 def form_field(
     label: str, placeholder: str, type: str, name: str
@@ -97,9 +102,9 @@ def contact_form() -> rx.Component:
                         rx.text(
                             "Mensaje",
                             style={
-                                "font-size": "15px",
-                                "font-weight": "500",
-                                "line-height": "35px",
+                                "fontSize": "15px",
+                                "fontWeight": "500",
+                                "lineHeight": "35px",
                             },
                         ),
                         rx.text_area(
@@ -107,26 +112,41 @@ def contact_form() -> rx.Component:
                             name="mensaje",
                             resize="vertical",
                         ),
-                        rx.checkbox(
-                            "Acepto la política de privacidad",
-                            name="politica",
-                            on_change=CheckboxState.set_checked,
-                        ),
+                        
                         direction="column",
                         spacing="1",
+                    ),
+                    rx.form.field(
+                        rx.flex(
+                            rx.checkbox(
+                                "Acepto la política de privacidad",
+                                name="politica",
+                                required=True
+                            ),
+                            rx.form.message(
+                                "Debes aceptar la política de privacidad",
+                                match="valueMissing",
+                                force_match=False,
+                                color="var(--red-11)"
+                            ),
+                            direction="column",
+                            spacing="2",
+                        ),
+                        name="politica",
+                        server_invalid=False
                     ),
                     rx.form.submit(
                         rx.button("Enviar"),
                         as_child=True,
+                        
                     ),
                     direction="column",
                     spacing="2",
                     width="100%",
                 ),
-                on_submit=lambda form_data: rx.window_alert(
-                    form_data.to_string()
-                ),
-                reset_on_submit=False,
+
+                on_submit=ContactFormState.handle_submit,
+                reset_on_submit=True
             ),
             width="100%",
             direction="column",

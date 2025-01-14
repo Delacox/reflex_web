@@ -12,7 +12,10 @@ def navbar_buttons() -> rx.Component:
             rx.hstack(
                 rx.hstack(
                     rx.link(
-                        logo(font_size="16px"),
+                        rx.box(
+                            logo(font_size="16px"),
+                            margin="0.5em"
+                        ),
                         href="/",
                         spacing="0",
                         text_decoration="none",
@@ -21,19 +24,28 @@ def navbar_buttons() -> rx.Component:
                 rx.spacer(),
                 rx.hstack(
                     navbar_link("Inicio", "/"),
-                    navbar_link("Nosotros", "/#"),
-                    navbar_link("Precios", "/#"),
+                    navbar_link("Nosotros", "/nosotros"),
+                    navbar_link("Precios", "/precios"),
                     navbar_link("Contacto", "/contacto"),
                     spacing="5",
                 ),
                 rx.spacer(),
                 rx.hstack(
-                    rx.button(
-                        "Registro",
-                        size="3",
-                        variant="outline",
+                    rx.link(
+                        rx.button(
+                            "Registro",
+                            size="3",
+                            variant="outline",
+                        ),
+                        href="/registro",
                     ),
-                    rx.button("Log In", size="3"),
+                    rx.link(
+                        rx.button(
+                            "Log In", 
+                            size="3"
+                        ),
+                        href="/login",
+                    ),
                     spacing="4",
                     justify="end",
                 ),
@@ -48,7 +60,10 @@ def navbar_buttons() -> rx.Component:
         rx.mobile_and_tablet(
             rx.hstack(
                 rx.hstack(
-                    logo(font_size="16px"),
+                        rx.box(
+                            logo(font_size="16px"),
+                            margin="0.5em"
+                        ),
                     align_items="center",
                 ),
                 rx.menu.root(
@@ -57,12 +72,12 @@ def navbar_buttons() -> rx.Component:
                     ),
                     rx.menu.content(
                         rx.menu.item("Inicio", href="/"),
-                        rx.menu.item("Nosotros"),
-                        rx.menu.item("Precios"),
+                        rx.menu.item("Nosotros", href="/nosotros"),
+                        rx.menu.item("Precios", href="/precios"),
                         rx.menu.item("Contacto", href="/contacto"),
                         rx.menu.separator(),
-                        rx.menu.item("Registro"),
-                        rx.menu.item("Sign up"),
+                        rx.menu.item("Registro", href="/registro"),
+                        rx.menu.item("Sign up", href="/login"),
                         side="left",
                         background_color=rx.color_mode_cond(
                                 light="rgba(250, 255, 245, 0.95)",  # fondo semi-transparente
