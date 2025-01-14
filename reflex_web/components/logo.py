@@ -7,7 +7,7 @@ def logo(font_size) -> rx.Component:
                     trim="both",
                     color= rx.color("green", 11),
                     font_size=font_size, ),
-            rx.text("informático",
+            rx.text("informáticoo",
                             trim="both",
                             font_size=font_size,
                             color = rx.color("slate", 12),),
