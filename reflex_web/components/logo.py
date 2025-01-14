@@ -18,7 +18,7 @@ def logo(font_size) -> rx.Component:
         ),
         weight="bold",
         font_family="Poppins",
-        margin="0.5em",
+        
 ),
 
 

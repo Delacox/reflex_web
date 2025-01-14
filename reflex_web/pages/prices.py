@@ -2,21 +2,22 @@ import reflex as rx
 import reflex_web.utils as utils
 from reflex_web.components.navbar import navbar_buttons
 from reflex_web.routers import Route
-from reflex_web.components.contact_form import contact_form
 from reflex_web.views.footer.footer import footer
+from reflex_web.views.pricing_cards_table.pricing_cards_table import pricing_cards_table
+
 
 
 
 # Definimos la interfaz.
 # Lo que creemos con el decorador rx.page sera una pagina 
 @rx.page(
-    route = Route.CONTACT.value,
-    title=utils.contact_title,
-    description=utils.contact_description,
+    route = Route.PRICES.value,
+    title=utils.prices_title,
+    description=utils.prices_description,
     image=utils.preview,
-    meta=utils.contact_meta,
+    meta=utils.prices_meta,
 )
-def contact() -> rx.Component:
+def prices() -> rx.Component:
     return rx.box(
         utils.lang(),
         # Contenedor principal con fondo y color base
@@ -45,24 +46,10 @@ def contact() -> rx.Component:
                 rx.box(
                     padding_top="9em"
                 ),
-                rx.container(
-                    rx.center(
-                        rx.heading(
-                            "Dejo dos formularios para ver el comportamiento responsive",
-                            padding="1em",
-                            text_align="center",                            
-                        ),
-                        rx.flex(
-                            contact_form(),contact_form(),
-                            flex_direction=["column", "column", "row"],
-                            spacing="5", 
-                        ),
-
-                    size="4",
-                    direction="column",
-                    ) 
-                    
-                    
+                rx.box(
+                    # codigo para la pagina
+                    pricing_cards_table(),
+                    width="100%",                    
                 ),
                 position="relative",
                 z_index="1",
@@ -72,6 +59,7 @@ def contact() -> rx.Component:
                     light="rgba(225, 230, 222, 0.7)",
                     dark="rgba(0, 0, 0, 0.4)"
                 ),
+                
             ),
             position="relative",
             width="100%",
