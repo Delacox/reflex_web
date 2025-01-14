@@ -1,10 +1,9 @@
 import reflex as rx
 import reflex_web.utils as utils
-from reflex_web.components.dark_mode import dark_mode_toggle
 from reflex_web.components.navbar import navbar_buttons
-import reflex_web.styles.styles as styles
 from reflex_web.views.header.header_one_column import header_one_column
 from reflex_web.views.header.header import header
+from reflex_web.views.footer.footer import footer
 
 
 
@@ -71,9 +70,9 @@ def index() -> rx.Component:
             header(),
             header(),
             ),
-        # Box para el dark mode toggle
+
         rx.box(
-            dark_mode_toggle(),
+            footer(),
             
         ),
         width="100%",
