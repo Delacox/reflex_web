@@ -6,12 +6,7 @@ from reflex_web.pages.about_us import about_us
 from reflex_web.pages.prices import prices
 from reflex_web.pages.signup import signup
 from reflex_web.pages.login import login
-
-
-
-# Configuramos el state
-class state(rx.State):
-    """Clase state"""
+from reflex_web.app.operations import is_livehello, get_user
 
 
 # Configura la aplicación.
@@ -30,3 +25,6 @@ app = rx.App(
     ),
       
 )
+
+app.api.add_api_route("/is_livehello",is_livehello)
+app.api.add_api_route("/get_user",get_user)

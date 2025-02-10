@@ -4,6 +4,21 @@ from reflex_web.components.navbar import navbar_buttons
 from reflex_web.views.header.header_one_column import header_one_column
 from reflex_web.views.header.header import header
 from reflex_web.views.footer.footer import footer
+from reflex_web.app.operations import is_livehello, get_user, User
+import json
+
+
+class IndexState(rx.State):
+    #Se definen las variables de estado que se van a utilizar
+    is_live: str
+    user : str
+    
+    # Se utilizan las funciones para actualizar las variables de estado
+    async def say_hello(self):
+        self.is_live = await is_livehello()
+    async def get_user(self, id:int):
+        usuario:User = await get_user(id)
+        self.user = usuario.name + " " + usuario.surname
 
 
 
@@ -66,8 +81,30 @@ def index() -> rx.Component:
             overflow="hidden",
         ),
         rx.box(
-            header(),
-            header(),
+            rx.center(
+                rx.hstack(
+                    rx.text(f"Usuario: {IndexState.user}")
+                )
+            )
+            ,
+            rx.center(
+                rx.button(
+                    rx.hstack(
+                        rx.icon("star"),
+                        rx.text("Click On Me"),
+                        on_click=lambda:IndexState.get_user(2), # Evento On_Click llamando a la API
+                        align="center"
+                    ),  
+                    size="4",
+                    variant="soft",
+                    margin_top="1.5em",                                  
+                    color_scheme="green",
+                    padding_x="2em",
+                ),
+                                
+            )
+        ),
+        rx.box(
             header(),
             ),
 
